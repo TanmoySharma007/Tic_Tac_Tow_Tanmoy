@@ -38,7 +38,8 @@ class GameActivity : AppCompatActivity() {
          var cellId = 0
         val buSelected = view as Button
 
-            when (buSelected.id){
+            when (buSelected.id)
+            {
                 R.id.button1 ->
                     cellId = 1
                 R.id.button2 ->
@@ -59,8 +60,8 @@ class GameActivity : AppCompatActivity() {
                     cellId = 9
 
             }
-                    Log.d("buclicked: ",buSelected.id.toString())
-                    Log.d("cellid: ",cellId.toString())
+                  //  Log.d("buclicked: ",buSelected.id.toString())
+                    //Log.d("cellid: ",cellId.toString())
 
        gameplay(cellId,buSelected) // Gameplay Function is called in the viewClick Function
 
@@ -89,6 +90,9 @@ class GameActivity : AppCompatActivity() {
 
          buSelected.isEnabled = false
      }
+
+
+
 
 
 }
