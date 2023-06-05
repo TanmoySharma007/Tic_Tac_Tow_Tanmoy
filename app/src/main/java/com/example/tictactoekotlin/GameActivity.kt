@@ -39,7 +39,7 @@ class GameActivity : AppCompatActivity() {
         val buSelected = view as Button
 
             when (buSelected.id)
-            {
+                       {
                 R.id.button1 ->
                     cellId = 1
                 R.id.button2 ->
@@ -84,14 +84,91 @@ class GameActivity : AppCompatActivity() {
              buSelected.text= "O"
 
              buSelected.setBackgroundResource(R.drawable.circular_button)
-             player1.add(cellid)
+             player2.add(cellid)
              activePlayer = 1
          }
 
          buSelected.isEnabled = false
+
+         checkWinner()
      }
 
+        fun checkWinner (){
+            var winner = 0
 
+
+            // row  1 is  the winner
+
+            if (player1.contains(1)&& player1.contains(2)&& player1.contains(3)){
+                winner = 1
+            }
+            if (player2.contains(1)&& player2.contains(2)&& player2.contains(3)){
+                winner = 2
+            }
+
+            // row 2 is the winner
+            if (player1.contains(4)&& player1.contains(5)&& player1.contains(6)){
+                winner = 1
+            }
+            if (player2.contains(4)&& player2.contains(5)&& player2.contains(6)){
+                winner = 2
+            }
+
+            // row 3 is the winner
+            if (player1.contains(7)&& player1.contains(8)&& player1.contains(9)){
+                winner = 1
+            }
+            if (player2.contains(7)&& player2.contains(8)&& player2.contains(9)){
+                winner = 2
+            }
+            // column 1 is the winner
+            if (player1.contains(1)&& player1.contains(4)&& player1.contains(7)){
+                winner = 1
+            }
+            if (player2.contains(1)&& player2.contains(4)&& player2.contains(7)){
+                winner = 2
+            }
+            // column 2 is the winner
+            if (player1.contains(2)&& player1.contains(5)&& player1.contains(8)){
+                winner = 1
+            }
+            if (player2.contains(2)&& player2.contains(5)&& player2.contains(8)){
+                winner = 2
+            }
+            // column 3 is the winner
+            if (player1.contains(3)&& player1.contains(6)&& player1.contains(9)){
+                winner = 1
+            }
+            if (player2.contains(3)&& player2.contains(6)&& player2.contains(9)){
+                winner = 2
+            }
+            // cross 1  is the winner
+            if (player1.contains(1)&& player1.contains(5)&& player1.contains(9)){
+                winner = 1
+            }
+            if (player2.contains(1)&& player2.contains(5)&& player2.contains(9)){
+                winner = 2
+            }
+
+            // cross 2  is the winner
+            if (player1.contains(3)&& player1.contains(5)&& player1.contains(7)){
+                winner = 1
+            }
+            if (player2.contains(3)&& player2.contains(5)&& player2.contains(7)){
+                winner = 2
+            }
+
+
+
+
+
+
+            if (winner==1) {
+                 Toast.makeText(this,"player 1 wins the game",Toast.LENGTH_LONG).show()
+            } else if (winner==2) {
+                Toast.makeText(this,"player 2 wins the game",Toast.LENGTH_LONG).show()
+            }
+        }
 
 
 
