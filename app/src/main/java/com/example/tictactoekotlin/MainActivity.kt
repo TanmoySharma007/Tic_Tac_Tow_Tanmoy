@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.ImageView
 import com.example.tictactoekotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +13,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        setContentView (binding.root)
 
         binding.logoimg.translationY = -1000f
         binding.gamename.translationY = 1000f
